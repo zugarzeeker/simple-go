@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/simple-go
+    docker:
+      - image: golang:1.9
+    steps:
+      - run:
+          name: Unit test
+          command: go test
