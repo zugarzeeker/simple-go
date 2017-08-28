@@ -1,10 +1,10 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/simple-go
     docker:
       - image: golang:1.9
+    working_directory: ~/simple-go
     steps:
-      - run:
-          name: Unit test
-          command: go test
+      - checkout
+      - run: go get -v -t -d
+      - run: go test -v
